@@ -25,18 +25,18 @@ var Articleone = {
    
    function createtemplate(data){
        var title=data.title;
-       var date=data.title;
+       var date=data.date;
        var heading=data.heading;
        var content=data.content;
        
    var htmltemplate = `
-   <html>
-   <head>
-       <title>
+       <html>
+      <head>
+          <title>
            $(title)
-       </title>
-       <link href="/ui/style.css" rel="stylesheet" />
-   </head> 
+          </title>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head> 
    <body>
        <div class='container'>
        <div>

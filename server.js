@@ -33,7 +33,7 @@ var Articleone = {
        <html>
       <head>
           <title>
-           $(title)
+           Article one | uppala gopichand
           </title>
         <link href="/ui/style.css" rel="stylesheet" />
     </head> 
@@ -44,13 +44,21 @@ var Articleone = {
        </div>
        <hr/>
        <h3>
-           $(heading)
+           Article one
        </h3>
        <div>
-           $(date)
+           sep 27,2016
        </div>
        <div>
-           $(content)
+           <p>
+               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
+          </p>
+           <p>
+               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
+          </p>
+          <p>
+               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
+          </p>
        </div>
        </div>
    </body>

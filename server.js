@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleone = {
+var Articleone = {
    title:'article one | uppala gopichand',
    heading:'article one',
    date:'sep 7,2016',
@@ -64,7 +64,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Article-one',function(req,res){
-    res.send(createtemplate(articleone));
+    res.send(createtemplate(Articleone));
 });
 
 app.get('/Article-two',function(req,res){

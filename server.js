@@ -6,67 +6,57 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var Articleone = {
-   title:'Article one | uppala gopichand',
-   heading:'Article one',
-   date:'sep 27,2016',
-   content:`
-          <p>
-               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-          </p>
+var articleone = {
+    title:'Article one | uppala gopichand',
+    heading:'Article one',
+    date:'sep 27,2016',
+    content:`
            <p>
                this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-          </p>
-          <p>
-               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-          </p>`
-   
-   };
-   
-   function createtemplate(data){
-       var title=data.title;
-       var date=data.date;
-       var heading=data.heading;
-       var content=data.content;
-       
-   var htmltemplate = `
-       <html>
-      <head>
-          <title>
-           Article one | uppala gopichand
-          </title>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head> 
-   <body>
-       <div class='container'>
-       <div>
-           <a href="/">home</a>
-       </div>
-       <hr/>
-       <h3>
-           Article one
-       </h3>
-       <div>
-           sep 27,2016
-       </div>
-       <div>
+           </p>
            <p>
                this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-          </p>
+           </p>
            <p>
                this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-          </p>
-          <p>
-               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-          </p>
-       </div>
-       </div>
-   </body>
-</html>
+           </p>`
+};
+
+function createtemplate (data) {
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
+    var htmltemplate = `
+    <html>
+        <head>
+           <title>
+              ${title}
+           </title>
+           <link href="/ui/style.css" rel="stylesheet" />
+       </head> 
+       <body>
+           <div class='container'>
+           <div>
+              <a href="/">home</a>
+           </div>
+          <hr/>
+           <h3>
+              ${heading}
+           </h3>
+           <div>
+              ${date}
+           </div>
+           <div>
+             ${content}
+           </div>
+           </div>
+       </body>
+    </html>
 `;
-   return htmltemplate;
+  return htmltemplate;
 }
-    
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });

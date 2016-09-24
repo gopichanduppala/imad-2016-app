@@ -6,21 +6,53 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articleone = {
-    title:'Article one | uppala gopichand',
-    heading:'Article one',
-    date:'sep 27,2016',
-    content:`
-           <p>
-               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-           </p>
-           <p>
-               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-           </p>
-           <p>
-               this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
-           </p>`
+var articles = {
+  'article-one' : {
+      title:'Article one | uppala gopichand',
+      heading:'Article one',
+      date:'sep 27,2016',
+      content:`
+             <p>
+                 this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
+             </p>
+             <p>
+                 this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
+             </p>
+             <p>
+                 this is content for my first article.this is content for my first article.this is content for my first article.this is content for my first article.
+             </p>`
+  },
+  'article-two' : {
+      title:'Article two | uppala gopichand',
+      heading:'Article two',
+      date:'sep 28,2016',
+      content:`
+             <p>
+                 this is content for my second article.
+             </p>
+             <p>
+                 this is content for my second article.
+             </p>
+             <p>
+                 this is content for my second article.
+             </p>`
+  },
+  'article-three' : {
+      title:'Article three | uppala gopichand',
+      heading:'Article three',
+      date:'sep 29,2016',
+      content:`
+             <p>
+                 this is content for my third article.
+             </p>
+             <p>
+                 this is content for my third article.
+             </p>
+             <p>
+                 this is content for my third article.
+             </p>`},
 };
+  
 
 function createtemplate (data) {
     var title = data.title;
@@ -61,17 +93,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/Article-one',function(req,res){
-    res.send(createtemplate(articleone));
+app.get('/;Articlename',function(req,res){
+    // articlename == article-one
+    // articles[articlename] == () content of article one
+    var articlename = res.params.articlename;
+    res.send(createtemplate(articles[articlename]));
 });
 
-app.get('/Article-two',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'Article-two.html'));
-});
-
-app.get('/Article-three',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'Article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));

@@ -96,7 +96,7 @@ app.get('/', function (req, res) {
 app.get('/;Articlename',function(req,res){
     // articlename == article-one
     // articles[articlename] == () content of article one
-    var articlename = rel.params.articlename;
+    var articlename = rec.params.articlename;
     res.send(createtemplate(articles[articlename]));
 });
 

@@ -93,7 +93,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/;articlename',function(req,res){
+app.get('/:articlename',function(req,res){
     // articlename == Article-one
     // articles[articlename] == () content of article one
     var articlename = req.params.articlename;

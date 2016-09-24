@@ -50,7 +50,7 @@ var articles = {
              </p>
              <p>
                  this is content for my third article.
-             </p>`},
+             </p>`}
 };
   
 

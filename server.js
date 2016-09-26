@@ -54,13 +54,13 @@ var articles = {
 };
   
 
-function createtemplate (data) {
+function createTemplate (data) {
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
     
-    var htmltemplate = `
+    var htmlTemplate = `
     <html>
         <head>
            <title>
@@ -87,7 +87,7 @@ function createtemplate (data) {
        </body>
     </html>
 `;
-  return htmltemplate;
+  return htmlTemplate;
 }
 
 app.get('/', function (req, res) {
@@ -98,7 +98,7 @@ app.get('/:articlename',function(req,res){
     // articlename == Article-one
     // articles[articlename] == () content of article one
     var articlename = req.params.articlename;
-    res.send(createtemplate(articles[articlename]));
+    res.send(createTemplate(articles[articlename]));
 });
 
 

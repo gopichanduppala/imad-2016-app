@@ -1,5 +1,5 @@
 //Counter code
-var Button = dpcument.getElementById('counter');
+var button = dpcument.getElementById('counter');
 button.onclick = function () {
     
     // Make a request to the counter endpoint
